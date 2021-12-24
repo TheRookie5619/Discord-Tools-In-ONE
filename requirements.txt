@@ -1,0 +1,11 @@
+pyfiglet
+pyautogui
+bs4
+pyperclip
+selenium
+requests
+numpy
+discord_webhook
+colorama
+colored
+lxml
