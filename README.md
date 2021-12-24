@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 Run main.py
 
-#FOR EDUCATIONAL PURPOSES ONLY
+# FOR EDUCATIONAL PURPOSES ONLY
 
 ## Why am I making this?
 Well i'm bored so I made a big hacking tool :) there will be updates in the future
