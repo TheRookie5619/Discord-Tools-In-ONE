@@ -6,6 +6,7 @@ import ctypes
 import string
 import os
 import time
+import discord
 import pyfiglet
 import pyautogui
 import lxml
@@ -21,6 +22,7 @@ import requests
 import requests.exceptions
 import urllib.parse
 import re
+import smtplib
 
 banner = pyfiglet.figlet_format("MAL")
 print(banner)
@@ -38,6 +40,7 @@ print('''
    | 7. Webhook Spammer (WS)
    | 8. Mass Report (MS)
    | 9. Token Logger (TL)
+   | 10. Nuke Bot (NB)
    |             Made by !Mal#5277
    | -------------------------------------------------
    |
@@ -45,6 +48,43 @@ print('''
 
 print("Enter your Choice of Tool:")
 tn = input("You: ").lower()
+print('\n')
+
+
+def DiscordBot():
+    from discord.ext import commands
+    import discord as d
+
+    print("Enter your bots Token: ")
+    token = input("You: ")
+    print('\n')
+
+    print("!!Invite your bot to the server!!")
+    print("$nuke (CHANNEL ID)\n")
+    done = input("Enter DONE when finished: ")
+    print('\n')
+
+    if done == 'done':
+        token = token
+        client = commands.Bot(command_prefix='$', help_command=None)
+
+        @client.event
+        async def on_ready():
+            print(f'{client.user} has Awoken!')
+
+        @client.command()
+        async def nuke(ctx, channel: d.TextChannel):
+            mbed = d.Embed(
+                title='Nuked',
+                description='I OWN YOU ALL NOW'
+            )
+            if ctx.author.guild_permissions.manage_channels:
+                await ctx.send(embed=mbed)
+                await channel.delete()
+        client.run(token)
+
+    else:
+        exit()
 
 
 def TokenLogger():
@@ -242,9 +282,6 @@ def EmailScraper():
 
 
 def EmailBomber():
-    import smtplib
-    import sys
-
     def banner():
         print('+[+[+[ Email-Bomber v1.0 ]+]+]+')
         print('+[+[+[ made with codes ]+]+]+')
@@ -1020,6 +1057,8 @@ elif tn == 'ms':
 elif tn == 'tl':
     print("Loading...")
     TokenLogger()
+elif tn == 'nb':
+    DiscordBot()
 else:
     print("---INVALID---")
     time.sleep(360)
