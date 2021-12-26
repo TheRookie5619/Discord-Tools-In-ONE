@@ -7,6 +7,10 @@ pip install -r requirements.txt
 
 Run main.py
 
+## Questions??
+You can add me here: !Mal#5277
+or you can join my discord server: https://discord.gg/qqExcWPkJ4
+
 # FOR EDUCATIONAL PURPOSES ONLY
 
 ## Why am I making this?
